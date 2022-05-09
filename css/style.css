@@ -1,0 +1,642 @@
+/* Start Global Rules */
+:root {
+  --main-color: #a9a9a96b;
+  --head-color: #4c4f53;
+  --section-color: #ececec;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 2000px;
+  font-family: "Cairo", sans-serif;
+  overflow-x: hidden;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
+/* End Global Rules */
+/* start header*/
+header {
+  background-color: white;
+  position: relative;
+  -webkit-box-shadow: 0 0 10px #ddd;
+  -moz-box-shadow: 0 0 10px #ddd;
+  box-shadow: 0 0 10px #ddd;
+}
+
+header .head {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--head-color);
+  color: #ffffffff;
+  border-color: #454746;
+  overflow: hidden;
+}
+header .head label {
+  width: fit-content;
+  font-weight: bolder;
+  background-color: rgb(211 181 84);
+  direction: rtl;
+  height: 26px;
+  padding: 5px;
+  margin-right: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+header .head .entet {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+}
+/* print */
+@media print {
+  header .head .btn {
+    display: none;
+  }
+}
+/* print */
+/* End header */
+/* Start section info */
+.section_info {
+  background-color: var(--section-color);
+}
+.section_info .container {
+  border: 1 solid var(--head-color);
+}
+.section_info .container .info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.section_info .container .info .info_pat,
+.section_info .container .info .info_infir,
+.section_info .container .info .info_gener {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.section_info .container .info .info_pat label,
+.section_info .container .info .info_infir label,
+.section_info .container .info .info_gener label {
+  font-size: 15px;
+  font-weight: 600;
+}
+.section_info .container .info .info_pat label,
+.section_info .container .info .info_infir label,
+.section_info .container .info .info_gener label,
+.section_info .container .Bloc label {
+  font-size: 15px;
+  font-weight: 600;
+  text-indent: 6px;
+}
+.section_info .container .info .info_pat select,
+.section_info .container .info .info_infir select,
+.section_info .container .info .info_gener select {
+  outline: none;
+  border-color: var(--section-color);
+  color: var(--head-color);
+  font-weight: bold;
+  border-radius: 6px;
+  padding-left: 3px;
+  height: 33px;
+  width: 300px;
+  font-size: 15px;
+  background-color: #ffffff96;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.section_info .container .info .info_gener input,
+.section_info .container .Bloc input {
+  width: 100px;
+  outline: none;
+  padding-left: 3px;
+  height: 33px;
+  border: 1px solid var(--section-color);
+  color: var(--head-color);
+  background-color: #ffffff96;
+  font-weight: bold;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.section_info .container .Bloc textarea {
+  height: 30px;
+  border: 1px solid #4c4f537d;
+  width: 230px;
+  resize: none;
+  outline: none;
+  background-color: #ffffff96;
+  border-radius: 6px;
+  padding-left: 5px;
+  caret-color: var(--head-color);
+}
+.section_info .container .Bloc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+}
+/* End section info */
+/* start style */
+.style .container {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #9c5353;
+  color: #ffffffff;
+  border-color: #e65858;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+.style .container h2 {
+  margin-left: 15px;
+  font-size: 15px;
+}
+.style .container h2::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f328";
+  position: absolute;
+  left: 8px;
+  font-size: 20px;
+  top: 7px;
+}
+/* End style */
+/* Start section table */
+.section_table {
+  background-color: #f1f1f15e;
+  position: relative;
+  padding-bottom: 15px;
+}
+/* Start survaillance */
+.section_table .container {
+  border: 2px solid var(--section-color);
+}
+.table {
+  margin-bottom: 15px;
+}
+.section_table .survaillance,
+.section_table .entrée,
+.section_table .sortie,
+.section_table .Aérosol,
+.section_table .Traitement,
+.section_table .Régime
+{
+  position: absolute;
+ top : offsetX + "px";
+ top : offsetY + "px";
+  left: 30%;
+  display: none;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border: 2px solid #d9d7d7;
+  flex-direction: column;
+  gap: 9px;
+  overflow: hidden;
+  background: #ffffffff;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  z-index: 5;
+  font-size: 15px;
+  font-weight: 700;
+}
+.section_table .survaillance input,
+.section_table .survaillance textarea, 
+.section_table .entrée input,
+.section_table .entrée textarea,
+.section_table .sortie input,
+.section_table .sortie textarea,
+.section_table .Aérosol input,
+.section_table .Aérosol textarea,
+.section_table .Traitement input,
+.section_table .Traitement textarea,
+.section_table .Régime input,
+.section_table .Régime textarea
+{
+  outline: none;
+  width: 180px;
+  margin: 0 5px;
+}
+.section_table .survaillance h4,
+.section_table .entrée h4,
+.section_table .sortie h4,
+.section_table .Aérosol h4,
+.section_table .Traitement h4,
+.section_table .Régime h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+}
+.section_table .survaillance h4::after,
+.section_table .entrée h4::after,
+.section_table .sortie h4::after,
+.section_table .Aérosol h4::after,
+.section_table .Traitement h4::after,
+.section_table .Régime h4::after
+ {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: -5px;
+  height: 1px;
+  width: calc(100% + 10px);
+  background-color: #d9d7d7;
+}
+.section_table .survaillance h4 span,
+.section_table .entrée h4 span,
+.section_table .sortie h4 span,
+.section_table .Aérosol h4 span,
+.section_table .Traitement h4 span,
+.section_table .Régime h4 span
+ {
+  font-size: 25px;
+  color: #4c4f537d;
+  font-weight: bold;
+  cursor: pointer;
+}
+.section_table .survaillance .btn_survaillance,
+.section_table .entrée .btn_Entrées,
+.section_table .sortie .btn_sorties, 
+.section_table .Aérosol .btn_Aérosol,
+.section_table .Traitement .btn_Traitement,
+.section_table .Régime .btn_Régime {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.section_table .survaillance .btn_survaillance label,
+.section_table .entrée .btn_Entrées label,
+.section_table .sortie .btn_sorties label,
+.section_table .Aérosol .btn_Aérosol label,
+.section_table .Traitement .btn_Traitement label,
+.section_table .Régime .btn_Régime label {
+  color: #ffffffff;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.section_table .survaillance .btn_survaillance::before,
+.section_table .entrée .btn_Entrées::before,
+.section_table .sortie .btn_sorties::before,
+.section_table .Aérosol .btn_Aérosol::before,
+.section_table .Traitement .btn_Traitement::before,
+.section_table .Régime .btn_Régime::before {
+  content: "";
+  position: absolute;
+  bottom: 50px;
+  left: -5px;
+  height: 2px;
+  width: calc(100% + 10px);
+  background-color: #d9d7d7;
+  margin-top: 10px;
+}
+
+.section_table .survaillance .btn_survaillance .valider_ser,
+.section_table .entrée .btn_Entrées .valider_Entrées,
+.section_table .sortie .btn_sorties .valider_sorties,
+.section_table .Aérosol .btn_Aérosol .valider_Aérosol,
+.section_table .Traitement .btn_Traitement .valider_Traitement,
+.section_table .Régime .btn_Régime .valider_Régime {
+  direction: rtl;
+  padding: 5px;
+  border: 1px solid #00008b;
+  background-color: #00008b;
+}
+.section_table .survaillance .btn_survaillance .valider_ser i,
+.section_table .survaillance .btn_survaillance .annuler_ser i,
+.section_table .entrée .btn_Entrées .valider_Entrées i,
+.section_table .entrée .btn_Entrées .annuler_Entrées i ,
+.section_table .sortie .btn_sorties .valider_sorties i,
+.section_table .sortie .btn_sorties .annuler_sorties i ,
+.section_table .Aérosol .btn_Aérosol .valider_Aérosol i,
+.section_table .Aérosol .btn_Aérosol .annuler_Aérosol i ,
+.section_table .Traitement .btn_Traitement .valider_Traitement i,
+.section_table .Traitement .btn_Traitement .annuler_Traitement i,
+.section_table .Régime .btn_Régime .valider_Régime i,
+.section_table .Régime .btn_Régime .annuler_Régime i {
+  margin-right: 5px;
+}
+.section_table .survaillance .btn_survaillance .annuler_ser,
+.section_table .entrée .btn_Entrées .annuler_Entrées,
+.section_table .sortie .btn_sorties .annuler_sorties,
+.section_table .Aérosol .btn_Aérosol .annuler_Aérosol,
+.section_table .Traitement .btn_Traitement .annuler_Traitement,
+.section_table .Régime .btn_Régime .annuler_Régime {
+  direction: rtl;
+  padding: 5px;
+  border: 1px solid #8b0000;
+  background-color: #8b0000;
+}
+/* End survaillance */
+/* Start table of survaillance */
+table {
+  border: 2px solid #f6f6f6;
+  border-collapse: collapse;
+  min-width: 100%;
+}
+table .tr_class{
+  height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+table .tr_class td:not(:first-child){
+ width: inherit;
+}
+table tr,
+table tr td{
+  border: 2px solid #bbbbbb; 
+}
+table tr .td_servaillance {
+  background-color: #a9a9a9;
+}
+table .table_head td:not(:first-child) {
+  font-weight: bold;
+  padding: 10px;
+  height: 20px;
+  background-color: #d5d5d5;
+}
+.add {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-left: 10px;
+}
+.add_Régime{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 200px;
+  align-items: center;
+  margin-left: 10px;
+}
+.add i,
+.add_Régime i 
+{
+  cursor: pointer;
+  display: block;
+  background-color: #00008b;
+  color: #ffffffff;
+  padding: 3px;
+  width: fit-content;
+  margin-right: 5px;
+}
+/* start option right */
+.option_right,
+.option_Regime {
+  position: absolute;
+  bottom: 80%;
+  left: 20%;
+  display: none;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border: 2px solid #d9d7d7;
+  flex-direction: column;
+  gap: 9px;
+  overflow: hidden;
+  background: #ffffffff;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  z-index: 5;
+}
+.option_right h4,
+.option_Regime h4{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+}
+.option_right h4::after,
+.option_Regime h4::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: -5px;
+  height: 1px;
+  width: calc(100% + 10px);
+  background-color: #d9d7d7;
+}
+.option_right h4 span, 
+.option_Regime h4 span {
+  font-size: 25px;
+  color: #4c4f537d;
+  font-weight: bold;
+  cursor: pointer;
+}
+.option_right .btn_right ,
+.option_Regime .btn_right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+  padding: 10px;
+}
+.option_right .btn_right .annuler_planific,
+.option_right .btn_right .supprimer_valeurP,
+.option_right .btn_right .supprimer_traitement,
+.option_right .btn_right .fermer ,
+.option_Regime .btn_right .supprimer_regime,
+.option_Regime .btn_right .fermerR 
+{
+  direction: rtl;
+  padding: 10px;
+  font-weight: 600;
+  color: #ffffffff;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.option_right .btn_right .annuler_planific {
+  background-color: #3f4145;
+}
+.option_right .btn_right .supprimer_valeurP
+ {
+  background-color: #747f23;
+}
+.option_right .btn_right .supprimer_traitement,
+.option_Regime .btn_right .supprimer_regime {
+  background-color: #b11226;
+}
+.option_right .btn_right .fermer,
+.option_Regime .btn_right .fermerR {
+  background-color: #749775;
+}
+.option_right .btn_right .close_option,
+.option_Regime .btn_right .close_optionRegime
+ {
+  cursor: pointer;
+}
+/* End option right */
+ /* start mesured survaillance  */
+ .section_table .mesured_survaillance {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  display: none;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border: 2px solid #d9d7d7;
+  flex-direction: column;
+  gap: 9px;
+  overflow: hidden;
+  background: #ffffffff;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  z-index: 5;
+ }
+ 
+ .section_table .mesured_survaillance h4{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  font-size: 15px;
+  font-weight: bold;
+ }
+ .section_table .mesured_survaillance h4::after{
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: -5px;
+  height: 1px;
+  width: calc(100% + 10px);
+  background-color: #d9d7d7;
+ }
+
+ .mesured_survaillance .input_mesur {
+  outline: none;
+  width: 180px;
+  margin: 0 5px;
+
+ }
+ .section_table .mesured_survaillance h4 span{
+  font-size: 25px;
+  color: #4c4f537d;
+  font-weight: bold;
+  cursor: pointer;
+ }
+ .section_table .mesured_survaillance .btn_mesured{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+ }
+ .mesured_survaillance .btn_mesured label {
+  color: #ffffffff;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+ }
+ .mesured_survaillance .btn_mesured::before {
+  content: "";
+  position: absolute;
+  bottom: 50px;
+  left: -5px;
+  height: 2px;
+  width: calc(100% + 10px);
+  background-color: #d9d7d7;
+  margin-top: 10px;  
+
+ }
+ .mesured_survaillance .btn_mesured .valider_mesur {
+  direction: rtl;
+  padding: 5px;
+  border: 1px solid #00008b;
+  background-color: #00008b;  
+
+ }
+ .section_table  .mesured_survaillance .btn_mesured .valider_mesur i,
+.section_table  .mesured_survaillance .btn_mesured .annuler_mesur i {
+  margin-right: 5px;
+}
+ .mesured_survaillance .btn_mesured .annuler_mesur{
+  direction: rtl;
+  padding: 5px;
+  border: 1px solid #8b0000;
+  background-color: #8b0000;  
+
+ }
+ /* End mesured survaillance  */
+
+/* End table of survaillance */
+/* End section table */
+
+/* start scroll-to-top */
+.scroll-to-top {
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  display: block;
+  right: 25px;
+  bottom: 25px;
+  z-index: 9999;
+}
+.scroll-to-top span {
+  background: linear-gradient(to right, #3b13cc 50%, #1900ff 50%) no-repeat
+    scroll right bottom/210% 100% #0075ff;
+  transition: all ease 0.3s;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.scroll-to-top span:before {
+  font-family: "FontAwesome";
+  content: "\f077";
+  font-size: 18px;
+  position: relative;
+  top: 5px;
+}
+
+/* End scroll-to-top */

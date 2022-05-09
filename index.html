@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pancarte patient</title>
+    <!-- Main Template CSS File -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&#038;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header>
+      <div class="head">
+        <div class="entet">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <h2 style="font-weight: 600; font-size: 20px">
+            Surveillance maladie
+          </h2>
+        </div>
+        <label id="print" class="btn" onclick="window.print()">
+          Impression
+          <i class="fa fa-print fa-lg"></i>
+        </label>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Start section info -->
+    <section class="section_info">
+      <div class="container">
+        <div class="info">
+          <div class="info_pat">
+            <label for="patient">Patient Hospitaliser:</label>
+            <select name="patient " id="book">
+              <option value="1">feryel</option>
+              <option value="2">heni</option>
+              <option value="3">wassim</option>
+              <option value="3">alyaoui</option>
+            </select>
+            <label for="patient">Médecins:</label>
+            <select name="patient " id="book">
+              <optgroup label="specialité1:">
+                <option value="1">feryel</option>
+                <option value="2">heni</option>
+                <option value="3">wassim</option>
+                <option value="3">alyaoui</option>
+              </optgroup>
+              <optgroup label="specialité2:">
+                <option value="1">feryel</option>
+                <option value="2">heni</option>
+                <option value="3">wassim</option>
+                <option value="3">alyaoui</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="info_infir">
+            <label for="patient">Infirmiére matin:</label>
+            <select name="patient " id="book">
+              <option value="1">Riyahi.j</option>
+              <option value="2">Tlili.s</option>
+              <option value="3">wassim.a</option>
+              <option value="3">Feryel.h</option>
+              <option value="3">Aucun infirmiére</option>
+            </select>
+            <label for="patient">Infirmiére aprée midi:</label>
+            <select name="patient " id="book">
+              <option value="1">Riyahi.j</option>
+              <option value="2">Tlili.s</option>
+              <option value="3">wassim.a</option>
+              <option value="3">Feryel.h</option>
+              <option value="3">Aucun infirmiére</option>
+            </select>
+            <label for="patient">Infirmiére soir:</label>
+            <select name="patient " id="book">
+              <option value="1">Riyahi.j</option>
+              <option value="2">Tlili.s</option>
+              <option value="3">wassim.a</option>
+              <option value="3">Feryel.h</option>
+              <option value="3">Aucun infirmiére</option>
+            </select>
+          </div>
+          <div class="info_gener">
+            <label for="patient">Motif d'hospitalisation:</label>
+            <select name="patient " id="book">
+              <option value="1">Urgence</option>
+              <option value="2">Extraction dentaire</option>
+              <option value="3">wassim</option>
+              <option value="3">alyaoui</option>
+              <option value="3">Aucun infirmiére</option>
+            </select>
+            <label for="patient">Groupe Sanguin:</label>
+            <select name="patient " id="book">
+              <option value="2">O-</option>
+              <option value="1">O+</option>
+              <option value="3">A-</option>
+              <option value="3">A+</option>
+              <option value="2">AB-</option>
+              <option value="1">AB+</option>
+            </select>
+            <label for="">Taille(cm):</label>
+            <input type="Number" placeholder="0" />
+            <label for="">Poid(kg):</label>
+            <input type="Number" placeholder="0" />
+            <label for="">SC(m<sup>2</sup>)&#47;BMI:</label>
+            <input type="Number" placeholder="0" />
+          </div>
+        </div>
+        <div class="Bloc">
+          <label for=""> Entrée Bloc:</label>
+          <input type="time" placeholder="0" />
+          <label for=""> Sortie Bloc:</label>
+          <input type="time" placeholder="0" />
+          <label for="">Observation:</label>
+          <textarea name="observation" id="" cols="2" rows="4"></textarea>
+          <div class="bloc"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End section info -->
+    <!-- start style -->
+    <div class="style">
+      <div class="container">
+        <h2 style="font-weight: 600; font-size: 20px">
+          Feuille de survaillance
+        </h2>
+      </div>
+    </div>
+    <!-- End style -->
+    <!-- Start section Table -->
+    <section class="section_table">
+      <div class="container">
+        <!-- start table survaillance -->
+        <div class="table">
+          <!-- start survaillance -->
+          <div class="survaillance">
+            <h4>
+              Survaillance
+              <span class="close_survaillance">x</span>
+            </h4>
+            <label for="survaillance">Désignation:</label>
+            <input
+              list="survaillance"
+              name="survail"
+              class="input_survaillance"
+            />
+            <datalist id="survaillance">
+              <option value="Tempurature(C°)"></option>
+              <option value="Pouls"></option>
+              <option value="Poids"></option>
+              <option value="T.A(mm/hg)"></option>
+              <option value="Insuline"></option>
+              <option value="Saturation"></option>
+              <option value="G.A.D"></option>
+              <option value="OXYGENE"></option>
+              <option value="Toilette"></option>
+            </datalist>
+            <label for="obs">Observation:</label>
+            <textarea class="obs_Ser" id="obs" cols="2" rows="4"></textarea>
+            <div class="btn_survaillance">
+              <label id="valider_ser" class="valider_ser">
+                Valider
+                <i class="fa-solid fa-floppy-disk"></i>
+              </label>
+              <label id="annuler" class="annuler_ser">
+                Annuler
+                <i class="fa-solid fa-xmark"></i>
+              </label>
+            </div>
+          </div>
+
+          <!-- End survaillance -->
+
+          <table border="2" id="table">
+            <tbody class="taskServ">
+              <tr class="table_head">
+                <td style="width: 25%" class="td_servaillance">
+                  <strong class="add"
+                    >Surveillance
+                    <i class="fa-solid fa-plus plus_survaillance"></i>
+                  </strong>
+                </td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>27</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr class="tr_class">
+                <td>Tempurature(C°)</td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+              </tr>
+              <tr class="tr_class">
+                <td>T.A(mm/hg)</td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- End table survaillance -->
+        <!-- start table entrée -->
+        <div class="table">
+          <!-- start Entréé -->
+          <div class="entrée">
+            <h4>
+              Entrée
+              <span class="close_Entrée">x</span>
+            </h4>
+            <label for="Entrées">Désignation:</label>
+            <input list="Entrées" name="Entrées" class="input_Entrées" />
+            <datalist id="Entrées">
+              <option value="kETOMED"></option>
+              <option value="CLINOMEL"></option>
+              <option value="NONAN"></option>
+              <option
+                value="IRIGATION                                                                                                                         "
+              ></option>
+              <option value="Eau"></option>
+              <option value="Ca++"></option>
+              <option value="Kahiven"></option>
+              <option value="Mannitol"></option>
+            </datalist>
+            <label for="obs">Observation:</label>
+            <textarea class="obs_Entrée" id="obs" cols="2" rows="4"></textarea>
+            <div class="btn_Entrées">
+              <label id="valider_Entrée" class="valider_Entrées">
+                Valider
+                <i class="fa-solid fa-floppy-disk"></i>
+              </label>
+              <label id="annuler" class="annuler_Entrées">
+                Annuler
+                <i class="fa-solid fa-xmark"></i>
+              </label>
+            </div>
+          </div>
+
+          <!-- End Entrée -->
+
+          <table border="2" id="table">
+            <tbody class="taskEntrée">
+              <tr class="table_head">
+                <td style="width: 25%" class="td_servaillance">
+                  <strong class="add"
+                    >Entréé
+                    <i class="fa-solid fa-plus plus_Entrée"></i>
+                  </strong>
+                </td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>27</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr class="tr_class">
+                <td>Eau</td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- End table entrée -->
+        </div>
+        <!-- End table entrée -->
+        <!-- start table sorties -->
+        <div class="table">
+          <!-- start sorties -->
+          <div class="sortie">
+            <h4>
+              Sortie
+              <span class="close_sortie">x</span>
+            </h4>
+            <label for="sorties">Désignation:</label>
+            <input list="sorties" name="sorties" class="input_sorties" />
+            <datalist id="sorties">
+              <option value="Ascite"></option>
+              <option value="Clampage"></option>
+              <option value="Aspiration continue"></option>
+              <option
+                value="Compensation Gastrique                                                                                                                         "
+              ></option>
+              <option value="Declampage"></option>
+              <option value="Drain de keher"></option>
+              <option value="Diurese"></option>
+              <option value="Drain Abdominal en Aspiration"></option>
+            </datalist>
+            <label for="obs">Observation:</label>
+            <textarea class="obs_sorties" id="obs" cols="2" rows="4"></textarea>
+            <div class="btn_sorties">
+              <label id="valider_sorties" class="valider_sorties">
+                Valider
+                <i class="fa-solid fa-floppy-disk"></i>
+              </label>
+              <label id="annuler" class="annuler_sorties">
+                Annuler
+                <i class="fa-solid fa-xmark"></i>
+              </label>
+            </div>
+          </div>
+
+          <!-- End Entrée -->
+
+          <table border="2" id="table">
+            <tbody class="taskSorties">
+              <tr class="table_head">
+                <td style="width: 25%" class="td_servaillance">
+                  <strong class="add"
+                    >Sortie
+                    <i class="fa-solid fa-plus plus_sorties"></i>
+                  </strong>
+                </td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>27</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr class="tr_class">
+                <td>Aspiration continue</td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- End table entrée -->
+        </div>
+        <!-- End table sorties -->
+        <!-- start table aérosol -->
+        <div class="table">
+          <!-- start sorties -->
+          <div class="Aérosol">
+            <h4>
+              Aérosol
+              <span class="close_Aérosol">x</span>
+            </h4>
+            <label for="Aérosol">Désignation:</label>
+            <input list="Aérosol" name="Aérosol" class="input_Aérosol" />
+            <datalist id="Aérosol">
+              <option value="Atrovent"></option>
+              <option value="Unidex"></option>
+              <option value="Pulmicort"></option>
+              <option
+                value="Colimycine                                                                                                                       "
+              ></option>
+              <option value="Pulm"></option>
+            </datalist>
+            <label for="obs">Observation:</label>
+            <textarea class="obs_Aérosol" id="obs" cols="2" rows="4"></textarea>
+            <div class="btn_Aérosol">
+              <label id="valider_Aérosol" class="valider_Aérosol">
+                Valider
+                <i class="fa-solid fa-floppy-disk"></i>
+              </label>
+              <label id="annuler" class="annuler_Aérosol">
+                Annuler
+                <i class="fa-solid fa-xmark"></i>
+              </label>
+            </div>
+          </div>
+
+          <!-- End Entrée -->
+
+          <table border="2" id="table">
+            <tbody class="taskAérosol">
+              <tr class="table_head">
+                <td style="width: 25%" class="td_servaillance">
+                  <strong class="add"
+                    >Aérosol
+                    <i class="fa-solid fa-plus plus_Aérosol"></i>
+                  </strong>
+                </td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>27</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr class="tr_class">
+                <td>Atrovent</td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- End table entrée -->
+        </div>
+        <!-- End table aérosol -->
+        <!-- start table Traitement -->
+        <div class="table">
+          <!-- start sorties -->
+          <div class="Traitement">
+            <h4>
+              Traitement
+              <span class="close_Traitement">x</span>
+            </h4>
+            <label for="Traitement">Désignation:</label>
+            <input
+              list="Traitement"
+              name="Traitement"
+              class="input_Traitement"
+            />
+            <datalist id="Traitement">
+              <option value="Doliprane"></option>
+              <option value="Tramal"></option>
+              <option value="Enoxa"></option>
+              <option
+                value="Gastral                                                                                                                      "
+              ></option>
+              <option value="Duphalac"></option>
+            </datalist>
+            <label for="obs">Observation:</label>
+            <textarea
+              class="obs_Traitement"
+              id="obs"
+              cols="2"
+              rows="4"
+            ></textarea>
+            <div class="btn_Traitement">
+              <label id="valider_Traitement" class="valider_Traitement">
+                Valider
+                <i class="fa-solid fa-floppy-disk"></i>
+              </label>
+              <label id="annuler" class="annuler_Traitement">
+                Annuler
+                <i class="fa-solid fa-xmark"></i>
+              </label>
+            </div>
+          </div>
+
+          <!-- End Entrée -->
+
+          <table border="2" id="table">
+            <tbody class="taskTraitement">
+              <tr class="table_head">
+                <td style="width: 25%" class="td_servaillance">
+                  <strong class="add"
+                    >Traitement
+                    <i class="fa-solid fa-plus plus_Traitement"></i>
+                  </strong>
+                </td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>27</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr class="tr_class">
+                <td>Doliprane</td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+                <td class="td_servaillance_list"></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- End table entrée -->
+        </div>
+        <!-- End table Traitement  -->
+        <!-- start table Régime -->
+        <div class="table">
+          <!-- start sorties -->
+          <div class="Régime">
+            <h4>
+              Régime
+              <span class="close_Régime">x</span>
+            </h4>
+            <label for="Régime">Désignation:</label>
+            <input list="Régime" name="Régime" class="input_Régime" />
+            <datalist id="Régime">
+              <option value="1/2Liquide"></option>
+              <option value="1/2 Liquide Diabetique"></option>
+              <option value="1/2 Liquide sans Sel"></option>
+              <option value="A jeun"></option>
+              <option value="Antidiare"></option>
+              <option value="cafe Noir"></option>
+              <option value="Diabetique 1/2 Sel"></option>
+            </datalist>
+            <label for="repas">Repas:</label>
+            <input list="repas" name="repas" class="input_repas" />
+            <datalist id="repas">
+              <option value="Dinner"></option>
+              <option value="Dejeuner"></option>
+              <option value="Gouter"></option>
+              <option value="Petit Dejeuner"></option>
+              <option value="Duphalac"></option>
+            </datalist>
+            <label for="obs">Observation:</label>
+            <textarea class="obs_Régime" id="obs" cols="2" rows="4"></textarea>
+            <div class="btn_Régime">
+              <label id="valider_Régime" class="valider_Régime">
+                Valider
+                <i class="fa-solid fa-floppy-disk"></i>
+              </label>
+              <label id="annuler" class="annuler_Régime">
+                Annuler
+                <i class="fa-solid fa-xmark"></i>
+              </label>
+            </div>
+          </div>
+
+          <!-- End Entrée -->
+
+          <table border="2" id="table">
+            <tbody class="taskRégime">
+              <tr class="table_head">
+                <td style="width: 25%" class="td_servaillance">
+                  <strong class="add_Régime"
+                    >Régime
+                    <i class="fa-solid fa-plus plus_Régime"></i>
+                  </strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- End table entrée -->
+        </div>
+              <!-- start option right -->
+      <div class="option_Regime">
+        <h4>
+          Option:
+          <span class="close_optionRegime">x</span>
+        </h4>
+        <div class="btn_right">
+          <label id="print" class="supprimer_regime">
+            Supprimer Regim
+            <i class="fa-solid fa-trash-can"></i>
+          </label>
+          <label id="annuler" class="fermerR">
+            Fermer
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </label>
+        </div>
+      </div>
+      <!-- End option right -->
+        <!-- End table Régime  -->
+      </div>
+      <!-- start option right -->
+      <div class="option_right">
+        <h4>
+          Option
+          <span class="close_option">x</span>
+        </h4>
+        <div class="btn_right">
+          <label id="print" class="annuler_planific">
+            Annuler Planification
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+          <label id="print" class="supprimer_valeurP">
+            Supprimer Valeurs
+            <i class="fa-solid fa-eraser"></i>
+          </label>
+          <label id="annuler" class="supprimer_traitement">
+            Supprimer Traitement
+            <i class="fa-solid fa-trash-can"></i>
+          </label>
+          <label id="annuler" class="fermer">
+            Fermer
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </label>
+        </div>
+      </div>
+      <!-- End option right -->
+      <!-- start mesured survaillance -->
+      <div class="mesured_survaillance">
+        <h4>
+          Survaillance:
+          <span class="close_mesured">x</span>
+        </h4>
+        <label for="mesur" class="mes">Valeur Mesurée:</label>
+        <input type="text" id="mesur" class="input_mesur" />
+
+        <div class="btn_mesured">
+          <label id="print" class="valider_mesur">
+            valider
+            <i class="fa-solid fa-floppy-disk"></i>
+          </label>
+          <label id="annuler" class="annuler_mesur">
+            Annuler
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+      </div>
+      <!-- End mesured  survaillance -->
+    </section>
+    <!-- End section Table -->
+
+    <!--start scroll-to-top -->
+    <div class="scroll-to-top"><span></span></div>
+    <!--end scroll-to-top -->
+    <!-- Main Template js File -->
+    <script src="./pancarte.js"></script>
+  </body>
+</html>
