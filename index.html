@@ -29,78 +29,76 @@
             Surveillance maladie
           </h2>
         </div>
-        <label id="print" class="btn" onclick="window.print()">
-          Impression
-          <i class="fa fa-print fa-lg"></i>
-        </label>
+        <div class="printB">
+        <label onclick="window.print()">
+          Impression</label>
+          <i class="fa fa-print fa-lg"></i>      
+      </div>
       </div>
     </header>
     <!-- End Header -->
     <!-- Start section info -->
-    <section class="section_info">
+     <!-- Start section info -->
+     <section class="section_info">
       <div class="container">
         <div class="info">
           <div class="info_pat">
-            <label for="patient">Patient Hospitaliser:</label>
-            <select name="patient " id="book">
-              <option value="1">feryel</option>
-              <option value="2">heni</option>
-              <option value="3">wassim</option>
-              <option value="3">alyaoui</option>
-            </select>
-            <label for="patient">Médecins:</label>
-            <select name="patient " id="book">
+            <label for="patient">Médecins:
+            <select name="patient " id="patient">
               <optgroup label="specialité1:">
                 <option value="1">feryel</option>
                 <option value="2">heni</option>
-                <option value="3">wassim</option>
-                <option value="3">alyaoui</option>
+                <option value="3">ahlem</option>
+                <option value="3">majda</option>
               </optgroup>
               <optgroup label="specialité2:">
                 <option value="1">feryel</option>
                 <option value="2">heni</option>
-                <option value="3">wassim</option>
-                <option value="3">alyaoui</option>
+                <option value="3">sawsen</option>
+                <option value="3">nawel</option>
               </optgroup>
             </select>
-          </div>
-          <div class="info_infir">
-            <label for="patient">Infirmiére matin:</label>
-            <select name="patient " id="book">
+          </label>
+            <label for="Infirmiérem">Infirmiére matin:
+            <select name="Infirmiérem " id="Infirmiérem">
               <option value="1">Riyahi.j</option>
               <option value="2">Tlili.s</option>
-              <option value="3">wassim.a</option>
+              <option value="3">majda.h</option>
               <option value="3">Feryel.h</option>
               <option value="3">Aucun infirmiére</option>
             </select>
-            <label for="patient">Infirmiére aprée midi:</label>
-            <select name="patient " id="book">
+          </label>
+            <label for="Infirmiérea">Infirmiére aprée midi:
+            <select name="Infirmiérea " id="Infirmiérea">
               <option value="1">Riyahi.j</option>
               <option value="2">Tlili.s</option>
-              <option value="3">wassim.a</option>
+              <option value="3">chahrazed.p</option>
               <option value="3">Feryel.h</option>
               <option value="3">Aucun infirmiére</option>
             </select>
-            <label for="patient">Infirmiére soir:</label>
-            <select name="patient " id="book">
+          </label>
+            <label for="Infirmiéres">Infirmiére soir:
+            <select name="Infirmiéres " id="Infirmiéres">
               <option value="1">Riyahi.j</option>
               <option value="2">Tlili.s</option>
-              <option value="3">wassim.a</option>
+              <option value="3">chahrazed.a</option>
               <option value="3">Feryel.h</option>
               <option value="3">Aucun infirmiére</option>
             </select>
+          </label>
           </div>
           <div class="info_gener">
-            <label for="patient">Motif d'hospitalisation:</label>
-            <select name="patient " id="book">
+            <label for="Motif">Motif d'hospitalisation:
+            <select name="Motif " id="Motif">
               <option value="1">Urgence</option>
               <option value="2">Extraction dentaire</option>
-              <option value="3">wassim</option>
-              <option value="3">alyaoui</option>
-              <option value="3">Aucun infirmiére</option>
+              <option value="3">Domicile</option>
+              <option value="3">Temps partiel</option>
+              <option value="3">chirurgie ambilatoire</option>
             </select>
-            <label for="patient">Groupe Sanguin:</label>
-            <select name="patient " id="book">
+          </label>
+            <label for="Sanguin">Groupe Sanguin:
+            <select name="Sanguin " id="Sanguin">
               <option value="2">O-</option>
               <option value="1">O+</option>
               <option value="3">A-</option>
@@ -108,23 +106,32 @@
               <option value="2">AB-</option>
               <option value="1">AB+</option>
             </select>
-            <label for="">Taille(cm):</label>
-            <input type="Number" placeholder="0" />
-            <label for="">Poid(kg):</label>
-            <input type="Number" placeholder="0" />
-            <label for="">SC(m<sup>2</sup>)&#47;BMI:</label>
-            <input type="Number" placeholder="0" />
+          </label>
+          <div class="number">
+            <label for="t">Taille(cm):
+            <input type="Number" placeholder="0" id="t" />
+          </label>
+            <label for="p">Poid(kg):
+            <input type="Number" placeholder="0" id="p" />
+            </label>
+            <label for="s">SC(m<sup>2</sup>)&#47;BMI:
+            <input type="Number" placeholder="0" id="s"/>
+          </label>
+        </div>
+          </div>
+        <div class="Bloc">
+          <label for=""> Entrée Bloc:
+          <input type="time"/>
+        </label>
+          <label for=""> Sortie Bloc:
+          <input type="time"/>
+        </label>
+          <label for="">Observation:
+            <input type="text" class="text_bloc"/>
+          </label>
           </div>
         </div>
-        <div class="Bloc">
-          <label for=""> Entrée Bloc:</label>
-          <input type="time" placeholder="0" />
-          <label for=""> Sortie Bloc:</label>
-          <input type="time" placeholder="0" />
-          <label for="">Observation:</label>
-          <textarea name="observation" id="" cols="2" rows="4"></textarea>
-          <div class="bloc"></div>
-        </div>
+      </div>
       </div>
     </section>
     <!-- End section info -->
@@ -198,7 +205,7 @@
                 <td>12</td>
                 <td>13</td>
                 <td>14</td>
-                <td>27</td>
+                <td>15</td>
                 <td>16</td>
                 <td>17</td>
                 <td>18</td>
@@ -328,7 +335,7 @@
                 <td>12</td>
                 <td>13</td>
                 <td>14</td>
-                <td>27</td>
+                <td>15</td>
                 <td>16</td>
                 <td>17</td>
                 <td>18</td>
@@ -432,7 +439,7 @@
                 <td>12</td>
                 <td>13</td>
                 <td>14</td>
-                <td>27</td>
+                <td>15</td>
                 <td>16</td>
                 <td>17</td>
                 <td>18</td>
@@ -533,7 +540,7 @@
                 <td>12</td>
                 <td>13</td>
                 <td>14</td>
-                <td>27</td>
+                <td>15</td>
                 <td>16</td>
                 <td>17</td>
                 <td>18</td>
@@ -643,7 +650,7 @@
                 <td>12</td>
                 <td>13</td>
                 <td>14</td>
-                <td>27</td>
+                <td>15</td>
                 <td>16</td>
                 <td>17</td>
                 <td>18</td>

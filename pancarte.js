@@ -99,6 +99,7 @@ document.addEventListener("dblclick", function (ev) {
         inputMesure.focus();
         //function valider mesure of planning
         validMesure.onclick = function () {
+          if (inputMesure.value !== ""){
           ev.target.innerHTML = `${inputMesure.value}`;
           ev.target.style.cssText =
             "color:red; font-weight:bold; font-size:17px";
@@ -106,6 +107,7 @@ document.addEventListener("dblclick", function (ev) {
           mesuredSurv.style.display = "none";
           inputMesure.value = "";
         };
+      }
       };
     }
   }

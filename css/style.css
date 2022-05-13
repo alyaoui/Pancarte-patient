@@ -13,7 +13,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  height: 2000px;
+  height: 1200px;
   font-family: "Cairo", sans-serif;
   overflow-x: hidden;
 }
@@ -31,7 +31,6 @@ header {
   -moz-box-shadow: 0 0 10px #ddd;
   box-shadow: 0 0 10px #ddd;
 }
-
 header .head {
   display: flex;
   width: 100%;
@@ -43,18 +42,32 @@ header .head {
   border-color: #454746;
   overflow: hidden;
 }
-header .head label {
+header .head .printB {
   width: fit-content;
-  font-weight: bolder;
+  font-weight: 600;
   background-color: rgb(211 181 84);
   direction: rtl;
-  height: 26px;
-  padding: 5px;
+  height: fit-content;
+  cursor: pointer;
+  padding: 6px;
   margin-right: 18px;
   border-radius: 4px;
-  cursor: pointer;
-  font-size: 15px;
+  border: 1px solid var(--head-color);
+  opacity: 0.9;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+}
+header .head .printB:hover {
+  opacity: 1;
+}
+header .head .printB label {
+  font-size: 17px;
   letter-spacing: 1px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  header .head .printB {
+    display: none;
+  }
 }
 header .head .entet {
   display: flex;
@@ -77,37 +90,43 @@ header .head .entet {
   background-color: var(--section-color);
 }
 .section_info .container {
-  border: 1 solid var(--head-color);
+  border: 2px solid var(--section-color);
 }
 .section_info .container .info {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 20px;
 }
 .section_info .container .info .info_pat,
-.section_info .container .info .info_infir,
-.section_info .container .info .info_gener {
+.section_info .container .info .info_gener,
+.section_info .container .info .Bloc {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.section_info .container .info .info_gener .number {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
-.section_info .container .info .info_pat label,
-.section_info .container .info .info_infir label,
-.section_info .container .info .info_gener label {
-  font-size: 15px;
-  font-weight: 600;
+.section_info .container .info .info_gener .number input {
+  width: 100%;
 }
-.section_info .container .info .info_pat label,
-.section_info .container .info .info_infir label,
-.section_info .container .info .info_gener label,
-.section_info .container .Bloc label {
+@media (max-width: 768px) {
+  .section_info .container .info .info_gener .number {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .section_info .container .info .info_gener .number input {
+    width: calc(100% / 3);
+  }
+}
+.section_info .container .info label {
   font-size: 15px;
   font-weight: 600;
   text-indent: 6px;
 }
-.section_info .container .info .info_pat select,
-.section_info .container .info .info_infir select,
-.section_info .container .info .info_gener select {
+.section_info .container .info select {
   outline: none;
   border-color: var(--section-color);
   color: var(--head-color);
@@ -118,14 +137,14 @@ header .head .entet {
   width: 300px;
   font-size: 15px;
   background-color: #ffffff96;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
+}
+@media (max-width: 768px) {
+  .section_info .container .info select {
+    width: calc((100% / 3) - 5px);
+  }
 }
 .section_info .container .info .info_gener input,
 .section_info .container .Bloc input {
-  width: 100px;
   outline: none;
   padding-left: 3px;
   height: 33px;
@@ -134,28 +153,35 @@ header .head .entet {
   background-color: #ffffff96;
   font-weight: bold;
   border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
 }
-.section_info .container .Bloc textarea {
-  height: 30px;
-  border: 1px solid #4c4f537d;
-  width: 230px;
-  resize: none;
-  outline: none;
+.section_info .container .Bloc label {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width:768px) {
+  .section_info .container .Bloc label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+}
+.section_info .container .Bloc .text_bloc {
+  height: 33px;
+  width: 300px;
+  caret-color: var(--head-color);
   background-color: #ffffff96;
+  border: 2px solid var(--section-color);
   border-radius: 6px;
-  padding-left: 5px;
   caret-color: var(--head-color);
 }
-.section_info .container .Bloc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 10px;
+@media (max-width: 768px) {
+  .section_info .container .Bloc .text_bloc {
+    width: 50%;
+  }
+}
+.section_info .container .Bloc input {
+  width: 150px;
 }
 /* End section info */
 /* start style */
@@ -419,13 +445,12 @@ table .table_head td:not(:first-child) {
 /* start option right */
 .option_right,
 .option_Regime {
-  position: absolute;
+  position: fixed;
   bottom: 80%;
   left: 20%;
   display: none;
   width: fit-content;
   height: fit-content;
-  padding: 5px;
   border: 2px solid #d9d7d7;
   flex-direction: column;
   gap: 9px;
@@ -440,6 +465,7 @@ table .table_head td:not(:first-child) {
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  padding-left: 5px;
   position: relative;
   font-size: 20px;
   font-weight: 500;
@@ -460,6 +486,7 @@ table .table_head td:not(:first-child) {
   color: #4c4f537d;
   font-weight: bold;
   cursor: pointer;
+  padding-right: 5px;
 }
 .option_right .btn_right ,
 .option_Regime .btn_right {
@@ -467,7 +494,7 @@ table .table_head td:not(:first-child) {
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
 }
 .option_right .btn_right .annuler_planific,
@@ -512,9 +539,9 @@ table .table_head td:not(:first-child) {
 /* End option right */
  /* start mesured survaillance  */
  .section_table .mesured_survaillance {
-  position: absolute;
-  top: 20%;
-  left: 50%;
+  position: fixed;
+  top: 30%;
+  left: 60%;
   display: none;
   width: fit-content;
   height: fit-content;
@@ -621,8 +648,7 @@ table .table_head td:not(:first-child) {
   z-index: 9999;
 }
 .scroll-to-top span {
-  background: linear-gradient(to right, #3b13cc 50%, #1900ff 50%) no-repeat
-    scroll right bottom/210% 100% #0075ff;
+  background: linear-gradient(to right, #6f6497 50%, #524e81 50%) no-repeat    scroll right bottom/210% 100% #0075ff;
   transition: all ease 0.3s;
   display: block;
   width: 100%;
@@ -630,6 +656,7 @@ table .table_head td:not(:first-child) {
   color: #fff;
   text-align: center;
   cursor: pointer;
+  border-radius: 5px;
 }
 .scroll-to-top span:before {
   font-family: "FontAwesome";
